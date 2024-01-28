@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #f2f2f2; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url('BG.png');
+    background-size: cover; 
+}
+
+h1 {
+    color: #333;
+}
+p {
+    color: #666;
+    margin-bottom: 20px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.yes-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+.yes-btn:hover {
+    background-color: #45a049;
+}
+.no-btn {
+    background-color: #ff6666;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+.no-btn:hover {
+    background-color: #ff4d4d;
+}
+.party-time {
+    animation: party 100000000s ;
+}
+
+@keyframes party {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.balloon {
+    position: absolute;
+    background-color: #ffcc00;
+    width: 20px;
+    height: 30px;
+    border-radius: 50%;
+    animation: balloon-fall 2s linear infinite;
+}
+
+@keyframes balloon-fall {
+    0% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(calc(100% + 50px));
+    }
+}
+
+
+
+.confetti {
+    position: absolute;
+    background-color: #ff6666;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    animation: confetti-falling 3s ease-in-out infinite;
+}
+
+@keyframes confetti-falling {
+    0% { transform: translateY(-200px) rotate(45deg); }
+    100% { transform: translateY(800px) rotate(45deg); }
+}
