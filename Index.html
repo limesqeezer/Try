@@ -3,122 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposal to Nandu</title>
-    <link rel="stylesheet" type="text/css" href="C.css">
+    <title>I'm Sorry, Subu</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Hii Nandu</h1>
-        <p>Mere sath Iskon chale gi??<br><br>
-            <i>I am not forcing you, if you are comfortable then okay.<br>
-            Aur aaj nahi toh kabhi aur bhi ja sakte hai.<br><br>
-    
-            And i promise you between this apni studies disturb nahi hogi <br>
-    
-            Agar 'No' hai toh bhi koi baat nahi, bas dosti mat tood na.<br><br>
-            And Bhul jana maine ye kabhi pucha tha simple  </i>😊😊<br><i><br>
-            Vaise bhi tere jaise acche dost kam milte hai.<br>
-            And please marne mat muje 🙏🏻🙏🏻</i>
-        </p>
-        <div class="button-container">
-            <button class="btn yes-btn" onclick="startParty()">Yes</button>
-            <button class="btn no-btn">No</button>
-        </div>
-    </div>
-
-    <script>
-        document.querySelector('.no-btn').addEventListener('click', function() {
-            const container = document.querySelector('.container');
-            container.innerHTML = `<h1>Koi baat nahi,</h1><h1> dost toh acche dost rahege 😊😊</h1>`;
-            container.style.backgroundColor = "#ffcccc";
-            container.style.color = "#ff3333";
-        });
-
-        function startParty() {
-            const container = document.querySelector('.container');
-            container.innerHTML = `<h1> 🫠🫠🥹🥹🫣🫣</h1><h1>🎉🎊Yess , Thank you  🎊🎉</h1>`;
-            container.style.backgroundColor = "#ccffcc"; // Green background
-            container.style.color = "#006400"; // Dark green text color
-
-            container.classList.add('party-time');
-
-            // Create balloons
-            const containerArea = container.offsetWidth * container.offsetHeight; // Area of the container
-            const balloonArea = 600; // Area of each balloon
-            const numberOfBalloons = Math.ceil(containerArea / balloonArea); // Calculate the number of balloons needed
-
-            for (let i = 0; i < numberOfBalloons; i++) {
-                createBalloon(container);
-            }
-
-            // Create confetti
-            const numberOfConfetti = 100; // Number of confetti
-            for (let i = 0; i < numberOfConfetti; i++) {
-                createConfetti(container);
-            }
-
-            setTimeout(() => {
-                container.classList.remove('party-time');
-                removePartyElements(container);
-            }, 5000); // Remove party elements after 5 seconds
-        }
-
-        function createConfetti(container) {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti');
-
-            // Generate random position within container
-            const left = Math.random() * (container.offsetWidth - 10); // 10 is the width of the confetti
-            const top = Math.random() * (container.offsetHeight - 10); // 10 is the height of the confetti
-
-            // Ensure the confetti stays within the container
-            if (left < 0) left = 0;
-            if (top < 0) top = 0;
-
-            confetti.style.left = `${left}px`;
-            confetti.style.top = `${top}px`;
-
-            container.appendChild(confetti);
-        }
-
-        function createBalloon(container) {
-            const balloon = document.createElement('div');
-            balloon.classList.add('balloon');
-
-            // Generate random position within container
-            let left = Math.random() * (container.offsetWidth - 20); // 20 is the width of the balloon
-            let top = Math.random() * (container.offsetHeight - 30); // 30 is the height of the balloon
-
-            // Check if the balloon overlaps with existing balloons
-            const balloons = container.querySelectorAll('.balloon');
-            let overlap = false;
-            balloons.forEach(existingBalloon => {
-                let existingLeft = parseFloat(existingBalloon.style.left);
-                let existingTop = parseFloat(existingBalloon.style.top);
-                if (Math.abs(left - existingLeft) < 50 && Math.abs(top - existingTop) < 50) {
-                    overlap = true;
-                }
-            });
-
-            // Ensure the balloon stays within the container
-            if (left < 0) left = 0;
-            if (top < 0) top = 0;
-
-            // Add the balloon if it doesn't overlap
-            if (!overlap) {
-                balloon.style.left = `${left}px`;
-                balloon.style.top = `${top}px`;
-                container.appendChild(balloon);
-            }
-        }
-
-        function removePartyElements(container) {
-            const balloons = container.querySelectorAll('.balloon');
-            balloons.forEach(balloon => balloon.remove());
-
-            const confetti = container.querySelectorAll('.confetti');
-            confetti.forEach(conf => conf.remove());
-        }
-    </script>
+    <header>
+        <h1>Hey Subu</h1>
+    </header>
+    <main>
+        <section id="apology">
+            <h2>Sorry ha vo uss time pahachan nahi paiye the</h2>
+            <div id="animation-container">
+                <div class="emoji">🥺</div>
+                <div class="tear tear-left"></div>
+                <div class="tear tear-right"></div>
+            </div>
+            <h2>But maja aaya vaise daat khane mai 🙃😂</h2>
+        </section>
+        <section id="response-buttons">
+            <button id="forgive-button">Maaf Kia</button>
+            <button id="alright-button">That's Alright</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
